@@ -2,8 +2,6 @@
 
 This is an official implementaion of the paper "SFCN+" in **Learning from Synthetic Data for Crowd Counting in the Wild**.
 
-![PCC Net.](./imgs/img0.png "pcc")
-
 In the paper, the experiments are conducted on the three populuar datasets: Shanghai Tech, UCF_CC_50 and WorldExpo'10. To be specific, Shanghai Tech Part B contains crowd images with the same resolution. For easier data prepareation, we only release the pre-trained model on ShanghaiTech Part B dataset in this repo.
 
 ##  Requirements
@@ -34,8 +32,10 @@ The pre-trained resSFCN on GCC: [[Link](https://mailnwpueducn-my.sharepoint.com/
 
 ### Quantitative results
 
-- Errors on test set:
+Errors on test set:
+
 ![Detialed infomation during the traning phase.](./img/loss.png "errors")
+
 Note: the blue line is the result of using pre-trained GCC Dataset, and the red is the result of using pre-trained ImageNet. 
  
  
