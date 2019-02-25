@@ -35,7 +35,7 @@ The pre-trained resSFCN on GCC: [[Link](https://mailnwpueducn-my.sharepoint.com/
 ### Quantitative results
 
 - Errors on test set:
-	![Detialed infomation during the traning phase.](./img/loss.png "errors")
+![Detialed infomation during the traning phase.](./img/loss.png "errors")
 Note: the blue line is the result of using pre-trained GCC Dataset, and the red is the result of using pre-trained ImageNet. 
  
  
