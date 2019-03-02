@@ -2,7 +2,6 @@
 
 This is an official implementaion of the paper "SFCN+" in **Learning from Synthetic Data for Crowd Counting in the Wild**.
 
-In the paper, the experiments are conducted on the three populuar datasets: Shanghai Tech, UCF_CC_50 and WorldExpo'10. To be specific, Shanghai Tech Part B contains crowd images with the same resolution. For easier data prepareation, we only release the pre-trained model on ShanghaiTech Part B dataset in this repo.
 
 ##  Requirements
 - Python 2.7
@@ -19,7 +18,7 @@ In the paper, the experiments are conducted on the three populuar datasets: Shan
 3. Generate the density maps by using the [code](https://github.com/aachenhang/crowdcount-mcnn/tree/master/data_preparation).
 4. Generate the segmentation maps.
 
-We also provide the processed QNRF dataset for training. [[Link](https://mailnwpueducn-my.sharepoint.com/:f:/g/personal/gjy3035_mail_nwpu_edu_cn/EkxvOVJBVuxPsu75YfYhv9UBNBbPYRwIEpr76kZf0sRUYw?e=JuSAqz)]
+We provide the processed QNRF dataset for training. [[Link](https://mailnwpueducn-my.sharepoint.com/:f:/g/personal/gjy3035_mail_nwpu_edu_cn/EkxvOVJBVuxPsu75YfYhv9UBNBbPYRwIEpr76kZf0sRUYw?e=JuSAqz)]
 
 The pre-trained resSFCN on GCC: [[Link](https://mailnwpueducn-my.sharepoint.com/:f:/g/personal/gjy3035_mail_nwpu_edu_cn/EjgL9bSXYO1GvgdLIigURQUBPZ2GMDmPpF71JZTBtWj_jA?e=VAWhFB)]
 
