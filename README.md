@@ -1,6 +1,6 @@
 # SFCN in "Learning from Synthetic Data for Crowd Counting in the Wild"
 
-This is an official implementaion of the paper "SFCN+" in **Learning from Synthetic Data for Crowd Counting in the Wild**.
+This is an official implementaion of the paper "SFCN+" in **Learning from Synthetic Data for Crowd Counting in the Wild**. More detialed information of the paper is shown in the [project homepage](https://gjy3035.github.io/GCC-CL/).
 
 
 ##  Requirements
@@ -18,9 +18,7 @@ This is an official implementaion of the paper "SFCN+" in **Learning from Synthe
 3. Generate the density maps by using the [code](https://github.com/aachenhang/crowdcount-mcnn/tree/master/data_preparation).
 4. Generate the segmentation maps.
 
-We provide the processed QNRF dataset for training. [[Link](https://mailnwpueducn-my.sharepoint.com/:f:/g/personal/gjy3035_mail_nwpu_edu_cn/EkxvOVJBVuxPsu75YfYhv9UBNBbPYRwIEpr76kZf0sRUYw?e=JuSAqz)]
-
-The pre-trained resSFCN on GCC: [[Link](https://mailnwpueducn-my.sharepoint.com/:f:/g/personal/gjy3035_mail_nwpu_edu_cn/EjgL9bSXYO1GvgdLIigURQUBPZ2GMDmPpF71JZTBtWj_jA?e=VAWhFB)]
+The pre-trained resSFCN on GCC and the processed QNRF dataset: [[Link](https://mailnwpueducn-my.sharepoint.com/:f:/g/personal/gjy3035_mail_nwpu_edu_cn/EjgL9bSXYO1GvgdLIigURQUBPZ2GMDmPpF71JZTBtWj_jA?e=VAWhFB)]
 
 ## Training model
 1. Run the train.py: ```python train.py```.
