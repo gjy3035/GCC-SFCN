@@ -52,7 +52,15 @@ Column 1: input image; Column 2: density map GT; Column 3: density map predictio
 We reproduce some classic networks (MCNN, CSRNet, SANet, etc.) and some solid baseline networks (AlexNet, VGG, ResNet, etc.) on GCC dataset. Welcome to visit this [link](https://github.com/gjy3035/C-3-Framework). It is under development, we will release it as soon as possible.
 
 ## Citation
-If you use the code, please cite the following paper:
+If you find this project useful for your research, please cite:
+```
+@inproceedings{wang2019learning,
+  title={Learning from Synthetic Data for Crowd Counting in the Wild},
+  author={Wang, Qi and Gao, Junyu and Wei, Lin and Yuan, Yuan},
+  journal={Computer Vision and Pattern Recognition (CVPR)},
+  year={2019}
+}
+```
 
 
 
