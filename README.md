@@ -56,7 +56,7 @@ If you find this project useful for your research, please cite:
 ```
 @inproceedings{wang2019learning,
   title={Learning from Synthetic Data for Crowd Counting in the Wild},
-  author={Wang, Qi and Gao, Junyu and Wei, Lin and Yuan, Yuan},
+  author={Wang, Qi and Gao, Junyu and Lin, Wei and Yuan, Yuan},
   journal={Computer Vision and Pattern Recognition (CVPR)},
   year={2019}
 }
