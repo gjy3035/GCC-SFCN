@@ -16,7 +16,7 @@ from PIL import Image, ImageOps
 torch.cuda.set_device(0)
 torch.backends.cudnn.benchmark = True
 
-exp_name = './DULR-display-save-mat'
+exp_name = './vis'
 if not os.path.exists(exp_name):
     os.mkdir(exp_name)
 
@@ -31,10 +31,9 @@ restore = standard_transforms.Compose([
     ])
 pil_to_tensor = standard_transforms.ToTensor()
 
-dataRoot = '/media/D/DataSet/CC/576x768RGB/shanghaitech_part_A/test_data'
+dataRoot = '/media/D/DataSet/CC/UCF-qnrf/768x1024_1221/test'
 
-model_path = '/media/D/CC_v2/CC-FCN/exp/06-29_22-39_vgg_big_relu_4__0.0001_0.995_1_-1/all_ep_178_mae_74.1_mse_131.0.pth'
-
+model_path = './pre/XXX.pth'
 def main():
     # file_list = [filename for filename in os.listdir(dataRoot+'/img/') if os.path.isfile(os.path.join(dataRoot+'/img/',filename))]
     file_list = [filename for root,dirs,filename in os.walk(dataRoot+'/img/')]
@@ -56,8 +55,11 @@ def test(file_list, model_path):
     net.cuda()
     net.eval()
 
+    maes = []
+    mses = []
+
     for filename in file_list:
-    	print filename
+        print filename
         imgname = dataRoot + '/img/' + filename
         filename_no_ext = filename.split('.')[0]
 
@@ -101,6 +103,12 @@ def test(file_list, model_path):
 
         pred_map = pred_map.cpu().data.numpy()[0,0,:,:]
         pred = np.sum(pred_map)/100.0
+
+        maes.append(abs(pred-gt))
+        mses.append((pred-gt)*(pred-gt))
+
+        
+        # vis
         pred_map = pred_map/np.max(pred_map+1e-20)
         pred_map = pred_map[0:ht_1,0:wd_1]
         
@@ -109,7 +117,7 @@ def test(file_list, model_path):
         den = den[0:ht_1,0:wd_1]
 
         den_frame = plt.gca()
-        plt.imshow(den)
+        plt.imshow(den, 'jet')
         den_frame.axes.get_yaxis().set_visible(False)
         den_frame.axes.get_xaxis().set_visible(False)
         den_frame.spines['top'].set_visible(False) 
@@ -124,7 +132,7 @@ def test(file_list, model_path):
         # sio.savemat(exp_name+'/'+filename_no_ext+'_gt_'+str(int(gt))+'.mat',{'data':den})
 
         pred_frame = plt.gca()
-        plt.imshow(pred_map)
+        plt.imshow(pred_map, 'jet')
         pred_frame.axes.get_yaxis().set_visible(False)
         pred_frame.axes.get_xaxis().set_visible(False)
         pred_frame.spines['top'].set_visible(False) 
@@ -141,7 +149,7 @@ def test(file_list, model_path):
         diff = den-pred_map
 
         diff_frame = plt.gca()
-        plt.imshow(diff)
+        plt.imshow(diff, 'jet')
         plt.colorbar()
         diff_frame.axes.get_yaxis().set_visible(False)
         diff_frame.axes.get_xaxis().set_visible(False)
@@ -155,19 +163,12 @@ def test(file_list, model_path):
         plt.close()
 
         # sio.savemat(exp_name+'/'+filename_no_ext+'_diff.mat',{'data':diff})
+        
+        print '[file %s]: [pred %.2f], [gt %.2f]' % (filename, pred, gt)
+    print np.average(np.array(maes))
+    print np.sqrt(np.average(np.array(mses)))
 
-
-def get_pts(data):
-    pts = []
-    cols,rows = data.shape
-    data = data*100
-
-    for i in range(0,rows):  
-        for j in range(0,cols):  
-            loc = [i,j]
-            for i_pt in range(0,int(data[i][j])):
-                pts.append(loc) 
-    return pts               
+          
 
 
 
