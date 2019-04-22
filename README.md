@@ -24,6 +24,9 @@ The pre-trained resSFCN on GCC and the processed QNRF dataset: [[Link](https://m
 1. Run the train.py: ```python train.py```.
 2. See the training outputs: ```Tensorboard --logdir=exp --port=6006```.
 
+## Testing pretrained model
+1. Download pretrained resSFCN on QNRF in this [link](https://mailnwpueducn-my.sharepoint.com/:f:/g/personal/gjy3035_mail_nwpu_edu_cn/EjgL9bSXYO1GvgdLIigURQUBPZ2GMDmPpF71JZTBtWj_jA) (two versions: the results of CVPR and the screenshot in this repo).
+2. Run ```python test.py```.
 
 ## Expermental results
 
