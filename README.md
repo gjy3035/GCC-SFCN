@@ -49,6 +49,8 @@ Note: the blue line is the result of using pre-trained GCC Dataset, and the red 
 
 Column 1: input image; Column 2: density map GT; Column 3: density map prediction.
 
+### Tips
+In this code, the validation is directly on the test set. Strictly speaking, it should be evaluated on the val set (randomly selected from the training set, which is adopted in the paper). Here, for a comparable reproduction (namely fixed splitting sets), this code directly adopts the test set for validation, which causes that the results of this code are better than that of our paper (mae: 99 v.s. 102).
 
 ## One More Thing
 
